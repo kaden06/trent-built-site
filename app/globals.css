@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #f5f5f5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible focus rings on the dark theme — accessible without overriding component-specific rings */
+*:focus-visible {
+  outline: 2px solid #00B140;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: rgba(0, 177, 64, 0.35);
+  color: #fff;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-lucky-green px-7 py-3.5 font-semibold text-black transition hover:bg-lucky-green-400 hover:shadow-[0_0_30px_rgba(0,177,64,0.45)] focus:outline-none focus-visible:ring-2 focus-visible:ring-lucky-green focus-visible:ring-offset-2 focus-visible:ring-offset-black;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-white/30 bg-white/5 px-7 py-3.5 font-semibold text-white backdrop-blur-sm transition hover:border-royal-blue hover:bg-royal-blue/20 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-royal-blue focus-visible:ring-offset-2 focus-visible:ring-offset-black;
+  }
+
+  .section {
+    @apply px-6 py-20 md:py-28;
+  }
+
+  .container-wide {
+    @apply mx-auto w-full max-w-7xl;
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-[0.2em] text-lucky-green;
+  }
+
+  .h-section {
+    @apply text-4xl font-black tracking-tight text-white md:text-5xl;
+  }
+
+  .brand-divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-royal-blue/40 to-transparent;
+  }
+
+  .brand-divider-green {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-lucky-green/40 to-transparent;
+  }
+}
